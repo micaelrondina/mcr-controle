@@ -11,6 +11,10 @@ export interface Menu {
 const MENUITEMS = [
   { state: 'dieta', type: 'link', name: 'Calculo de Macros', icon: 'calendar_today', task: 'br.micael.dieta'},
   { state: 'financeiro', type: 'link', name: 'Controle Financeiro', icon: 'attach_money', task: 'br.micael.dieta' },
+  { state: 'rel-eventos-1386', type: 'link', name: 'rel-eventos-1386', icon: 'attach_money', task: 'br.micael.dieta' },
+  { state: 'ger-filas-emissor', type: 'link', name: 'EMISSOR', icon: 'attach_money', task: 'br.micael.dieta' },
+
+
 
   /*
   { state: 'consultar-sintetico', type: 'link', name: 'Consulta Sintética', icon: 'search', task: 'dxc.incoming.elo.cons' },

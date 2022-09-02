@@ -16,6 +16,9 @@ import { MatSidenavContainer } from '@angular/material/sidenav';
 import { AccordionAnchorDirective, AccordionLinkDirective, AccordionDirective } from './accordion';
 import { DietaComponent } from './dieta/dieta.component';
 import { ComponentsRoutingModule } from './components.routing.module';
+import { RelEvent1386Component } from './rel-event-386/rel-event-386.component';
+import { RelGerFilasEmissorComponent } from './ger-filas-emissor/ger-filas-emissor.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -40,6 +43,9 @@ import { ComponentsRoutingModule } from './components.routing.module';
     AccordionLinkDirective,
     AccordionDirective,
     DietaComponent,
+    RelEvent1386Component,
+    RelGerFilasEmissorComponent,
+    DialogComponent
   ],
   exports: [
     HomeComponent,
@@ -48,7 +54,8 @@ import { ComponentsRoutingModule } from './components.routing.module';
     AccordionAnchorDirective,
     AccordionLinkDirective,
     AccordionDirective,
-    DietaComponent
+    DietaComponent,
+    DialogComponent
   ],
 })
 export class ComponentsModule { }
