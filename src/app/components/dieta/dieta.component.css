@@ -1,0 +1,6 @@
+.centralizado {
+  display: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
