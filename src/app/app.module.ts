@@ -12,6 +12,7 @@ import { LoggedUserService } from './shared/logged-user.service';
 import { LoaderService } from './shared/loader.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AlimentosService } from './shared/alimentos.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HttpClientModule } from '@angular/common/http';
     SharedService,
     AuthGuard,
     LoggedUserService,
-    LoaderService
+    LoaderService,
+    AlimentosService
   ],
   bootstrap: [AppComponent],
   schemas:[

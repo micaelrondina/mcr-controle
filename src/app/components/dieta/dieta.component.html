@@ -83,7 +83,7 @@
                 >
 
                 <div class="example-button-container">
-                  <button mat-mini-fab color="accent" aria-label="Example icon button with a plus one icon">
+                  <button mat-mini-fab color="accent" (click)="openDialog()">
                     <mat-icon>plus_one</mat-icon>
                   </button>
                 </div>
@@ -96,12 +96,3 @@
     </mat-card>
   </div>
 </div>
-
-
-<ol>
-  <li>
-  </li>
-  <li>
-    <button mat-raised-button (click)="openDialog()">Pick one</button>
-  </li>
-</ol>

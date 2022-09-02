@@ -19,17 +19,6 @@ const routes: Routes = [
       accessRole: 'br.micael.financeiro3'
     }
   },
-  {
-    path: 'rel-eventos-1386', component: RelEvent1386Component, canActivate: [AuthGuard], data: {
-      accessRole: 'br.micael.dieta'
-    }
-  },
-
-  {
-    path: 'ger-filas-emissor', component: RelGerFilasEmissorComponent, canActivate: [AuthGuard], data: {
-      accessRole: 'br.micael.dieta'
-    }
-  },
 ];
 
 @NgModule({
