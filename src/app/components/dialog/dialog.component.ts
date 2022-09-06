@@ -2,6 +2,7 @@ import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core'
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from 'src/app/models/dialog-data';
 import { AlimentosService } from 'src/app/shared/services/alimentos.service';
+import { DatabaseService } from 'src/app/shared/services/database.service';
 
 @Component({
   selector: 'app-dialog',
@@ -23,7 +24,8 @@ export class DialogComponent {
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    private alimentoService: AlimentosService
+    private alimentoService: AlimentosService,
+    private dataBaseService: DatabaseService
   ) { }
 
 
@@ -36,10 +38,8 @@ export class DialogComponent {
     console.log('Salvar evento', value);
   }
 
-  chamarAlimento() {
-    console.log(this.alimento);
-
-    this.alimentoService.buscarAlimentos(this.alimento)
+  buscarAlimento() {
+    this.dataBaseService.getFoodByName(this.alimento)
       .subscribe((r: any) => {
         console.log(r);
         this.dataSource = r;

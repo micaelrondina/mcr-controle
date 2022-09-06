@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { DatabaseService } from 'src/app/shared/services/database.service';
 import { DialogComponent } from '../dialog/dialog.component';
 
 
@@ -29,7 +30,8 @@ export class DietaComponent implements OnInit {
   displayedColumns: string[] = ['alimento', 'carbo', 'prot', 'gord', 'total'];
 
   constructor(
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private service: DatabaseService) { }
 
   relatorios: any;
   ngOnInit() {
@@ -40,8 +42,18 @@ export class DietaComponent implements OnInit {
     }]
   }
 
+
+
   downloadFile() {
 
+  }
+
+    initFoods(): void {
+    this.service.getFoodByName('Ovo').subscribe(
+      (response: any) => {
+        console.log(response);
+      }
+    );
   }
 
   openDialog(): void {
