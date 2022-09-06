@@ -10,7 +10,15 @@ import { AlimentosService } from 'src/app/shared/services/alimentos.service';
 })
 export class DialogComponent {
 
+  displayedColumns: string[] = ['alimento', 'quantidade', 'calorias'];
+
+  public dataSource: any;
+
+  clickedRows = new Set<any>();
+
   public alimento: string;
+  public quantidade: string;
+  public listDeAlimentos = new Array<any>();
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
@@ -34,9 +42,15 @@ export class DialogComponent {
     this.alimentoService.buscarAlimentos(this.alimento)
       .subscribe((r: any) => {
         console.log(r);
+        this.dataSource = r;
       }, (err: any) => {
         console.log('erro')
       })
+  }
+
+
+  clicked(row: any) {
+    this.clickedRows.has(row) ? this.clickedRows.delete(row) : this.clickedRows.add(row);
   }
 
 }

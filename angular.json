@@ -69,6 +69,11 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json",
+            "ssl": false,
+            "disableHostCheck": true
+          },
           "configurations": {
             "production": {
               "browserTarget": "crud-angular:build:production"

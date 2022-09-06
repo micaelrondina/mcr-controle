@@ -12,10 +12,6 @@ export interface PeriodicElement {
 }
 
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { alimento: 'Ovo', carboidrato: '1.0079', proteina: 'H', gordura: '30', total: '1300' },
-  { alimento: 'Batata Doce', carboidrato: '4.0026', proteina: 'He', gordura: '30', total: '1300' },
-];
 
 
 @Component({
@@ -24,13 +20,13 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./dieta.component.css']
 })
 export class DietaComponent implements OnInit {
-
+  public alimento: string;
   animal: string;
   name: string;
 
+  dataSource: any
 
   displayedColumns: string[] = ['alimento', 'carbo', 'prot', 'gord', 'total'];
-  dataSource = ELEMENT_DATA;
 
   constructor(
     public dialog: MatDialog) { }
@@ -50,8 +46,8 @@ export class DietaComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
-      // width: '1024px',
-      // height: '800px',
+      width: '1024px',
+      height: '800px',
       data: { name: this.name, animal: this.animal },
     });
 
@@ -60,6 +56,7 @@ export class DietaComponent implements OnInit {
       this.animal = result;
     });
   }
+
 }
 
 

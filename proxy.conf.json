@@ -1,0 +1,10 @@
+{
+  "/alimentos": {
+    "target": "https://caloriasporalimentoapi.herokuapp.com",
+    "pathRewrite": {
+      "^/alimentos": ""
+    },
+    "changeOrigin": true,
+    "secure": false
+  }
+}
