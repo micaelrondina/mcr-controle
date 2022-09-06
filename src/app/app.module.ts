@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ComponentsModule } from './components/components.module';
-import { SharedService } from './shared/shared.service';
+import { SharedService } from './shared/services/shared.service';
 import { AuthGuard } from './shared/auth.guard';
-import { LoggedUserService } from './shared/logged-user.service';
-import { LoaderService } from './shared/loader.service';
+import { LoggedUserService } from './shared/services/logged-user.service';
+import { LoaderService } from './shared/services/loader.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AlimentosService } from './shared/alimentos.service';
+import { AlimentosService } from './shared/services/alimentos.service';
 
 @NgModule({
   declarations: [

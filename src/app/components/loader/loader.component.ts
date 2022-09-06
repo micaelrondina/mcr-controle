@@ -1,4 +1,4 @@
-import { LoaderService } from './../../shared/loader.service';
+import { LoaderService } from '../../shared/services/loader.service';
 import { LoaderState } from './loader.model';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';

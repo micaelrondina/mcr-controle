@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { LoggedUserService } from './shared/logged-user.service';
-import { SharedService } from './shared/shared.service';
+import { LoggedUserService } from './shared/services/logged-user.service';
+import { SharedService } from './shared/services/shared.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
 

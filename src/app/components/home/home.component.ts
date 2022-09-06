@@ -1,5 +1,3 @@
-import { SharedService } from 'src/app/shared/shared.service';
-import { LoggedUser } from './../../models/logged-user';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MenuItems } from '../menu-itens/menu-itens';

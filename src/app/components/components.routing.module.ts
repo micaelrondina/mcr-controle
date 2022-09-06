@@ -3,10 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 //import { ConsultarComponent } from './consultar/consultar.component';
 import { AuthGuard } from '../shared/auth.guard';
 import { DietaComponent } from './dieta/dieta.component';
-import { RelGerFilasEmissorComponent } from './ger-filas-emissor/ger-filas-emissor.component';
-import { HomeComponent } from './home/home.component';
-import { RelEvent1386Component } from './rel-event-386/rel-event-386.component';
-import { SemAcessoComponent } from './sem-acesso/sem-acesso.component';
 
 const routes: Routes = [
   {

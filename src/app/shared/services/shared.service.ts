@@ -1,4 +1,4 @@
-import { LoggedUser } from './../models/logged-user';
+import { LoggedUser } from './../../models/logged-user';
 import { Injectable, EventEmitter } from '@angular/core';
 
 

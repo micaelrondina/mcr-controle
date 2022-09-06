@@ -1,6 +1,6 @@
+import { SharedService } from './../../shared/services/shared.service';
 import { Subscription } from 'rxjs';
 import { Component } from '@angular/core';
-import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
     selector: 'app-header',

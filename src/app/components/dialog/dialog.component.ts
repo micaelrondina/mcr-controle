@@ -1,7 +1,7 @@
 import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DialogData } from 'src/app/models/dialog-data';
-import { AlimentosService } from 'src/app/shared/alimentos.service';
+import { AlimentosService } from 'src/app/shared/services/alimentos.service';
 
 @Component({
   selector: 'app-dialog',
