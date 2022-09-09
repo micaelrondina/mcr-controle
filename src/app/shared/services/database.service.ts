@@ -23,11 +23,31 @@ export class DatabaseService {
   }
 
   getFoodByName(food: string): Observable<Food[]> {
-    return this.http.get<any>(`${this.urlJson}/food.json`).pipe(
-      switchMap((allFoods: any) => {
-        const alimentos = allFoods.filter((foods: any) => (foods.description.includes(food)));
+    return this.http.get<Food[]>(`${this.urlJson}/food.json`).pipe(
+      switchMap((allFoods: Food[]) => {
+        food = food.toUpperCase();
+        allFoods.map(foods => {
+          foods.description = foods.description?.toUpperCase();
+        });
+        const alimentos = allFoods.filter(foods => foods.description?.includes(food));
         return [alimentos];
       })
     )
   }
+
+
+  // getFoodByName(food: string): Observable<Food[]> {
+  //   return this.http.get<Food[]>(`${this.urlJson}/food.json`).pipe(
+  //     map((allFoods: any) => {
+  //       allFoods.map((foods: Food) => {
+  //         foods.description = foods.description?.toUpperCase();
+  //       });
+  //     }
+  //     ),
+  //     switchMap((allFoods: any) => {
+  //       const alimentos = allFoods.filter((foods: any) => (foods.description.includes(food)));
+  //       return [alimentos];
+  //     })
+  //   )
+  // }
 }

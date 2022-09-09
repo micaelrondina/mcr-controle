@@ -1,68 +1,88 @@
 <h2 mat-dialog-title>Buscar Alimento</h2>
 <mat-dialog-content class="mat-typography">
-  <form>
+  <form [formGroup]="formulario" (ngSubmit)="buscarAlimento()">
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Digite o alimento</mat-label>
-      <input  matInput placeholder="Ex. Pizza" name="alimento" [(ngModel)]="alimento">
+      <input
+        matInput
+        placeholder="Ex. Pizza"
+        name="alimento"
+        formControlName="alimento"
+      />
+      <mat-error *ngIf="contemError('alimento')">
+        Informar o alimento
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Quantidade (gramas)</mat-label>
-      <input matInput name="quantidade" name="quantidade" type="number" [(ngModel)]="quantidade">
+      <input
+        matInput
+        name="quantidade"
+        type="number"
+        formControlName="quantidade"
+      />
+      <mat-error *ngIf="contemError('quantidade')">
+        Informar a quantidade
+      </mat-error>
     </mat-form-field>
+
+
+    <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button cdkFocusInitial type="submit">Buscar [ENTER]</button>
+    </mat-dialog-actions>
+
   </form>
 </mat-dialog-content>
-
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- Position Column -->
 
   <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
-
 
   <ng-container matColumnDef="alimento">
     <th mat-header-cell *matHeaderCellDef>Alimento</th>
-    <td mat-cell *matCellDef="let element">{{element.description}}</td>
+    <td mat-cell *matCellDef="let element">{{ element.description }}</td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="quantidade">
     <th mat-header-cell *matHeaderCellDef>Quantidade</th>
-    <td mat-cell *matCellDef="let element">{{element.base_qty}}</td>
+    <td mat-cell *matCellDef="let element">{{ element.base_qty }}</td>
   </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="calorias">
-      <th mat-header-cell *matHeaderCellDef>Calorias</th>
-      <td mat-cell *matCellDef="let element">{{element.attributes.energy.kcal}}</td>
-    </ng-container>
-
+  <!-- Name Column -->
+  <ng-container matColumnDef="calorias">
+    <th mat-header-cell *matHeaderCellDef>Calorias</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.attributes.energy.kcal }}
+    </td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr
-      mat-row
-      (click)="clicked(row)"
-      [class.demo-row-is-clicked]="clickedRows.has(row)"
-      *matRowDef="let row; columns: displayedColumns;"
+    mat-row
+    (click)="clicked(row)"
+    [class.demo-row-is-clicked]="clickedRows.has(row)"
+    *matRowDef="let row; columns: displayedColumns"
   ></tr>
 </table>
 
-
 <ul>
   <li *ngFor="let clickedRow of clickedRows">
-    {{quantidade}} gramas de  {{clickedRow.description}}
+    {{ clickedRow.base_qty }} gramas de {{ clickedRow.description }}
   </li>
 </ul>
-
 
 <!-- <spaui-input name="documentState" placeholder="" label="UF" maxlength="2" [required]="ufNecessary"
 [(ngModel)]="accountDocumentDetails.accountDocumentState"
 [disabled]="!selectedDocumentType || !ufNecessary"></spaui-input> -->
 
-<mat-dialog-actions align="end">
+<!-- <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button cdkFocusInitial type="submit" (click)="buscarAlimento()">Buscar</button>
-</mat-dialog-actions>
+  <button mat-button cdkFocusInitial type="submit">Buscar</button>
+</mat-dialog-actions> -->
